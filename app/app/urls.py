@@ -17,15 +17,15 @@ from django.contrib import admin
 from django.urls import path
 from drf_sectacular.views import (
     SpectacularAPIView,
-    SpectaculrSwaggerView,
+    SpectacularSwaggerView,
 )
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/shcema', SpectacularAPIView.as_view(), name='api-schema'),
+    path('api/schema/', SpectacularAPIView.as_view(), name='api-schema'),
     path(
         'api/docs/',
-        SpectaculrSwaggerView.as_view(url_name='api-schema'),
+        SpectacularSwaggerView.as_view(url_name='api-schema'),
         name='api-docs',
     )
 ]
