@@ -70,9 +70,9 @@ class PublicUserApiTests(TestCase):
     def test_create_token_for_user(self):
         """Test generates token for valid credentials."""
         user_details = {
+            'name': 'Test name',
             'email': 'test@example.com',
             'password': 'testpass123',
-            'name': 'Test name',
         }
         create_user(**user_details)
 
@@ -110,7 +110,7 @@ class PublicUserApiTests(TestCase):
         self.assertEqual(res.status_code, status.HTTP_401_UNAUTHORIZED)
 
 class PrivateUserApiTests(TestCase):
-    """Test API reqursts that require authentication."""
+    """Test API requests that require authentication."""
 
     def setUp(self):
         self.user = create_user(
